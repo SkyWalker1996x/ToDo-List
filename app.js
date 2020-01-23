@@ -9,6 +9,8 @@ const loadEventListener = () => {
   form.addEventListener('submit', addTask);
   // Remove task
   taskList.addEventListener('click', removeTask);
+  // Clear task
+  clearBtn.addEventListener('click', clearTasks);
 };
 
 // Add task
@@ -43,6 +45,12 @@ const removeTask = (e) => {
   }
 };
 
+//Clear tasks
+const  clearTasks = () => {
+  while (taskList.firstChild) {
+    taskList.removeChild(taskList.firstChild)
+  }
+};
 
 
 loadEventListener();
