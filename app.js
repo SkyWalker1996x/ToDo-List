@@ -110,9 +110,17 @@ const removeTaskFromLocalStorage = (taskItem) => {
 
 //Clear tasks
 const  clearTasks = () => {
+  // Clear from DOM
   while (taskList.firstChild) {
     taskList.removeChild(taskList.firstChild)
   }
+  // Clear from LS
+  clearTasksFromLocalStorage();
+};
+
+// Clear tasks from LS
+const clearTasksFromLocalStorage = () => {
+  localStorage.clear();
 };
 
 
